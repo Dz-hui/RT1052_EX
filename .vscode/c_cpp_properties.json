@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "E:\\Github_project\\NXP\\i.MX RT\\RT1052\\DEMO/**",
+                "D:\\Keil_v5\\ARM\\ARMCC\\include/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "_CC_ARM",
+                "XIP_EXTERNAL_FLASH=1",
+                "XIP_BOOT_HEADER_ENABLE=1",
+                "XIP_BOOT_HEADER_DCD_ENABLE=1",
+                "SKIP_SYSCLK_INIT",
+                "DEBUG, CPU_MIMXRT1052DVL6B",
+                "PRINTF_FLOAT_ENABLE=0",
+                "SCANF_FLOAT_ENABLE=0",
+                "PRINTF_ADVANCED_ENABLE=0",
+                "SCANF_ADVANCED_ENABLE=0"
+            ]
+        }
+    ],
+    "version": 4
+}
