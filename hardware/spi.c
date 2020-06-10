@@ -13,7 +13,7 @@
 
 
 /*PAD≤Œ ˝≈‰÷√*/
-#define SPI_PAD_SETTING_DATA    (SRE_0_SLOW_SLEW_RATE| \
+#define SPI_PAD_SETTING_DATA            (SRE_0_SLOW_SLEW_RATE| \
                                         DSE_6_R0_6| \
 								        SPEED_1_MEDIUM_100MHz| \
 								        ODE_0_OPEN_DRAIN_DISABLED| \
@@ -53,12 +53,14 @@ void SPI_GPIO_config(void)
     IOMUXC_SetPinMux(SPI_MOSI_IOMUXC,0U);
 
     gpio_Config.direction=kGPIO_DigitalOutput;
-	gpio_Config.outputLogic=1;
+	gpio_Config.outputLogic=0;
 	gpio_Config.interruptMode=kGPIO_NoIntmode;
     GPIO_PinInit(SPI_CS_GPIO_PORT,SPI_CS_GPIO_PIN,&gpio_Config);
     GPIO_PinInit(SPI_SCK_GPIO_PORT,SPI_SCK_GPIO_PIN,&gpio_Config);
     GPIO_PinInit(SPI_MOSI_GPIO_PORT,SPI_MOSI_GPIO_PIN,&gpio_Config);
 
+    gpio_Config.outputLogic=0;
+	gpio_Config.interruptMode=kGPIO_NoIntmode;
     gpio_Config.direction=kGPIO_DigitalInput;
     GPIO_PinInit(SPI_MISO_GPIO_PORT,SPI_MISO_GPIO_PIN,&gpio_Config);
 
@@ -66,7 +68,6 @@ void SPI_GPIO_config(void)
     SPI_CS_H();
     SPI_SCK_H();
     SPI_MOSI_H();
-   
 }
 
 /***********************************************************************
@@ -84,9 +85,9 @@ void SPI_write_data(uint8_t data)
     for(i=0;i<8;i++)
     {
         SPI_SCK_L();
-        CPU_TS_Tmr_Delay_US(10);
-
-        if(data&0x80)
+        // CPU_TS_Tmr_Delay_US(10);
+        //MSB Mode
+        if(data & 0x80)
         {
             SPI_MOSI_H();
         }
@@ -95,12 +96,13 @@ void SPI_write_data(uint8_t data)
             SPI_MOSI_L();
         }
         
-        data<<=1;
-        CPU_TS_Tmr_Delay_US(50);
+        data <<= 1;
+
+        CPU_TS_Tmr_Delay_US(5);
 
         SPI_SCK_H();
-        CPU_TS_Tmr_Delay_US(50);
         
+        CPU_TS_Tmr_Delay_US(5);
     }
 }
 
@@ -120,20 +122,21 @@ uint8_t SPI_read_data(void)
     for(i=0;i<8;i++)
     {
         SPI_SCK_L();
-        CPU_TS_Tmr_Delay_US(10);
+        // CPU_TS_Tmr_Delay_US(10);
 
         res<<=1;
+        
         if(SPI_MISO()==1)
         {
-            res |=0x01;
+            res |= 0x01;
         }
 
-        CPU_TS_Tmr_Delay_US(50);
+        CPU_TS_Tmr_Delay_US(5);
 
         SPI_SCK_H();
-        CPU_TS_Tmr_Delay_US(50);
+        
+        CPU_TS_Tmr_Delay_US(5);
     }
-    
     return res;
 }
 

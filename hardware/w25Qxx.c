@@ -52,15 +52,17 @@ uint32_t W25QXX_readID(void)
     
     SPI_CS_L();
     SPI_write_data(W25X_JedecDeviceID);
+    SPI_write_data(Dummy_Byte);
     temp0=SPI_read_data();
+    SPI_write_data(Dummy_Byte);
     temp1=SPI_read_data();
+    SPI_write_data(Dummy_Byte);
     temp2=SPI_read_data();
     SPI_CS_H();
 
-    temp=(temp0<<16) | (temp1<<8) | temp2;
+    temp = (temp0<<16) | (temp1<<8) | temp2;
 
     return temp;
-    
 }
 
 /***********************************************************************
