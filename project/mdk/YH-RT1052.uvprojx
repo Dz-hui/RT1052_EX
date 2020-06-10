@@ -446,6 +446,16 @@
               <FileType>1</FileType>
               <FilePath>..\..\libraries\drivers\fsl_adc.c</FilePath>
             </File>
+            <File>
+              <FileName>fsl_pit.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\drivers\fsl_pit.c</FilePath>
+            </File>
+            <File>
+              <FileName>fsl_gpt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\drivers\fsl_gpt.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -610,6 +620,26 @@
               <FileName>exit.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\hardware\exit.c</FilePath>
+            </File>
+            <File>
+              <FileName>pit.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\hardware\pit.c</FilePath>
+            </File>
+            <File>
+              <FileName>gpt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\hardware\gpt.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\hardware\spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>w25Qxx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\hardware\w25Qxx.c</FilePath>
             </File>
           </Files>
         </Group>

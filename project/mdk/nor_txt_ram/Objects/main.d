@@ -30,3 +30,7 @@
 .\nor_txt_ram\objects\main.o: ..\..\hardware\mpu6050.h
 .\nor_txt_ram\objects\main.o: ..\..\hardware\adc.h
 .\nor_txt_ram\objects\main.o: ..\..\libraries\drivers\fsl_adc.h
+.\nor_txt_ram\objects\main.o: ..\..\hardware\pit.h
+.\nor_txt_ram\objects\main.o: ..\..\libraries\drivers\fsl_pit.h
+.\nor_txt_ram\objects\main.o: ..\..\hardware\gpt.h
+.\nor_txt_ram\objects\main.o: ..\..\hardware\w25Qxx.h

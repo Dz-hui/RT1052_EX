@@ -128,7 +128,6 @@ void ADC_mode_config(void)
 
     /*¿ªÆôADCÖÐ¶Ï*/
     EnableIRQ(ADC_IRQ);
-
 }
 
 /***********************************************************************
@@ -162,3 +161,4 @@ void ADC_IRQHandler(void)
     ADC_ConvertedValue=ADC_GetChannelConversionValue(ADC_PORT,ADC_CHANNLE_GROUP);
 
 }
+
