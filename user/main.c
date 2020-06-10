@@ -86,6 +86,7 @@ int main(void)
 	GPT_config();
 	W25QXX_config();
 	
+	
   /*表示初始化完成*/
 	printf("hello！\n");
 
