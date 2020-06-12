@@ -1,7 +1,11 @@
+/***********************************************************************
+*@Author: Dz_hui
+*@Date: 2020-06-10 18:42:11
+*@FilePath: \DEMO\user\main.h
+*@Drscription: 
+***********************************************************************/
 #ifndef _main_h
 #define _main_h
-
-
 
 #define SUCCESS							    1
 #define ERROR					    	    0

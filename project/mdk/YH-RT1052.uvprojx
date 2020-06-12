@@ -184,7 +184,6 @@
             <hadXRAM>1</hadXRAM>
             <uocXRam>0</uocXRam>
             <RvdsVP>3</RvdsVP>
-            <RvdsMve>0</RvdsMve>
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>0</StupSel>
@@ -457,6 +456,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\libraries\drivers\fsl_gpt.c</FilePath>
             </File>
+            <File>
+              <FileName>fsl_qtmr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\drivers\fsl_qtmr.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -641,6 +645,11 @@
               <FileName>w25Qxx.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\hardware\w25Qxx.c</FilePath>
+            </File>
+            <File>
+              <FileName>pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\hardware\pwm.c</FilePath>
             </File>
           </Files>
         </Group>

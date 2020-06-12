@@ -33,7 +33,7 @@
 #define SPI_SCK_H()             GPIO_PinWrite(SPI_SCK_GPIO_PORT,SPI_SCK_GPIO_PIN,1)
 #define SPI_MOSI_L()            GPIO_PinWrite(SPI_MOSI_GPIO_PORT,SPI_MOSI_GPIO_PIN,0)
 #define SPI_MOSI_H()            GPIO_PinWrite(SPI_MOSI_GPIO_PORT,SPI_MOSI_GPIO_PIN,1)
-#define SPI_MISO()              GPIO_PsinRead(SPI_MISO_GPIO_PORT,SPI_MISO_GPIO_PIN)
+#define SPI_MISO()              GPIO_PinRead(SPI_MISO_GPIO_PORT,SPI_MISO_GPIO_PIN)
 
 
 void SPI_GPIO_config(void);

@@ -10,7 +10,7 @@
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE",
-                "_CC_ARM",
+                "__CC_ARM",
                 "XIP_EXTERNAL_FLASH=1",
                 "XIP_BOOT_HEADER_ENABLE=1",
                 "XIP_BOOT_HEADER_DCD_ENABLE=1",

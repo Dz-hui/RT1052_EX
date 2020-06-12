@@ -40,16 +40,16 @@
 #include "gpt.h"
 #include "w25Qxx.h"
 #include "main.h"
+#include "pwm.h"
 /*******************************************************************
  * Prototypes
  *******************************************************************/
 volatile bool ADC_ConversionDoneFlag;
 volatile uint32_t ADC_ConvertedValue;
 adc_channel_config_t adc_channle_config;
-/*******************************************************************
+/********************************s***********************************
  * Code
  *******************************************************************/
-
 uint8_t TX_buff[8]="h";
 uint8_t RX_buff[8];
 
@@ -84,23 +84,23 @@ int main(void)
   	//MPU6050_config();
 	//PIT_config();
 	//PIT_StartTimer(PIT,PIT_CHANNLE);
-	GPT_config();
-	W25QXX_config();
-	
+	//GPT_config();
+	//W25QXX_config();
+	QTMR_PWM_config();
 	
   /*表示初始化完成*/
-	printf("hello！\n");
+	DEBUG_PRINT("\n");
 
 	flash_ID=W25QXX_readID();
 
-	printf("flash_ID=0x%X\n",flash_ID);
+	DEBUG_PRINT("flash_ID=0x%X\n",flash_ID);
 
 	W25Qxx_sector_erase(0x00000);
 	W25QXX_pagewrite(0x00000,TX_buff,1);
 	W25QXX_readdata(0x00000,RX_buff,1);
-	printf("读出数据为%s\n",RX_buff);
-
-
+	DEBUG_PRINT("read data :%s\n",RX_buff);
+	
+	DEBUG_PRINT("SHABI");
 	
 	
 #if 0
